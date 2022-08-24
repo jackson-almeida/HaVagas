@@ -1,178 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/etName"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:inputType="textPersonName"
-        android:layout_marginHorizontal="10dp"
-        android:padding="10dp"
-        android:hint="@string/name"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="16dp" />
+        android:orientation="vertical"
+        tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/etEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="10dp"
-        android:hint="@string/e_mail"
-        android:padding="10dp"
-        android:inputType="textEmailAddress"
-        app:layout_constraintTop_toBottomOf="@+id/etName"
-        tools:layout_editor_absoluteX="16dp" />
-
-    <EditText
-        android:id="@+id/etPhone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="10dp"
-        android:hint="@string/telefoneFixo"
-        android:inputType="phone"
-        android:padding="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/etEmail"
-        tools:layout_editor_absoluteX="16dp" />
-
-    <RadioGroup
-        android:id="@+id/rgTel"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/etPhone"
-        android:layout_margin="5dp"
-        android:minHeight="48dp"
-        android:padding="5dp">
-
-        <RadioButton
-            android:id="@+id/rbResid"
-            android:layout_width="0dp"
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:checked="true"
-            android:layout_weight="1"
-            android:text="@string/resid_ncial"
+            android:layout_marginTop="10dp"
+            android:inputType="textPersonName"
+            android:layout_marginHorizontal="10dp"
+            android:padding="10dp"
+            android:hint="@string/name"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="10dp"
+            android:hint="@string/e_mail"
+            android:padding="10dp"
+            android:inputType="textEmailAddress"
+            app:layout_constraintTop_toBottomOf="@+id/etName"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <EditText
+            android:id="@+id/etPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="10dp"
+            android:hint="@string/telefoneFixo"
+            android:inputType="phone"
+            android:padding="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/etEmail"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <RadioGroup
+            android:id="@+id/rgTel"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/etPhone"
+            android:layout_margin="5dp"
+            android:minHeight="48dp"
+            android:padding="5dp">
+
+            <RadioButton
+                android:id="@+id/rbResid"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:layout_weight="1"
+                android:text="@string/resid_ncial"
+                />
+
+            <RadioButton
+                android:id="@+id/rbCom"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/comercial"
+                android:layout_weight="1"
+                />
+        </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/cbCellPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginHorizontal="10dp"
+            android:text="@string/telefone_celular"
+            app:layout_constraintTop_toBottomOf="@+id/rgTel"/>
+
+        <EditText
+            android:id="@+id/etCellPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:layout_marginHorizontal="10dp"
+            android:hint="@string/telefone"
+            android:inputType="phone"
+            app:layout_constraintTop_toBottomOf="@+id/cbCellPhone"
+            tools:layout_editor_absoluteX="16dp"/>
+
+        <RadioGroup
+            android:id="@+id/rgSexo"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/etCellPhone"
+            android:layout_margin="5dp"
+            android:minHeight="48dp"
+            android:padding="5dp">
+
+            <RadioButton
+                android:id="@+id/rbFem"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:layout_weight="1"
+                android:text="@string/feminino"
+                />
+
+            <RadioButton
+                android:id="@+id/rbMasc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/masculino"
+                android:layout_weight="1"
+                />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/etDataNasc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:padding="10dp"
+            tools:layout_editor_absoluteX="7dp"
+            tools:layout_editor_absoluteY="400dp"
+            android:layout_marginHorizontal="10dp"
+            android:hint="Data de nascimento"
+            app:layout_constraintTop_toBottomOf="@+id/rgSexo"/>
+
+        <Spinner
+            android:id="@+id/spEs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginHorizontal="10dp"
+            android:entries="@array/escolaridade"
+            app:layout_constraintTop_toBottomOf="@+id/etDataNasc"
             />
 
-        <RadioButton
-            android:id="@+id/rbCom"
-            android:layout_width="0dp"
+        <EditText
+            android:id="@+id/etVagaInteresse"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/comercial"
-            android:layout_weight="1"
-            />
-    </RadioGroup>
+            android:layout_marginTop="10dp"
+            android:inputType="text"
+            android:layout_marginHorizontal="10dp"
+            android:padding="10dp"
+            android:hint="Vagas de interesse"
+            app:layout_constraintTop_toBottomOf="@+id/spEs" />
 
-    <CheckBox
-        android:id="@+id/cbCellPhone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="0dp"
-        android:layout_marginHorizontal="10dp"
-        android:text="@string/telefone_celular"
-        app:layout_constraintTop_toBottomOf="@+id/rgTel"/>
-
-    <EditText
-        android:id="@+id/etCellPhone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:padding="10dp"
-        android:layout_marginHorizontal="10dp"
-        android:hint="@string/telefone"
-        android:inputType="phone"
-        app:layout_constraintTop_toBottomOf="@+id/cbCellPhone"
-        tools:layout_editor_absoluteX="16dp"/>
-
-    <RadioGroup
-        android:id="@+id/rgSexo"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/etCellPhone"
-        android:layout_margin="5dp"
-        android:minHeight="48dp"
-        android:padding="5dp">
-
-        <RadioButton
-            android:id="@+id/rbFem"
-            android:layout_width="0dp"
+        <Button
+            android:id="@+id/btLimpar"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:checked="true"
-            android:layout_weight="1"
-            android:text="@string/feminino"
+            android:text="@string/limpar"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            android:minHeight="48dp"
+            app:layout_constraintTop_toBottomOf="@+id/etVagaInteresse"
             />
 
-        <RadioButton
-            android:id="@+id/rbMasc"
-            android:layout_width="0dp"
+        <Button
+            android:id="@+id/btSalvar"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/masculino"
-            android:layout_weight="1"
+            android:text="@string/salvar"
+            android:padding="5dp"
+            android:layout_margin="5dp"
+            android:minHeight="48dp"
+            app:layout_constraintTop_toBottomOf="@+id/btLimpar"
             />
-    </RadioGroup>
-
-    <EditText
-        android:id="@+id/etDataNasc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="date"
-        android:padding="10dp"
-        tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="400dp"
-        android:layout_marginHorizontal="10dp"
-        android:hint="Data de nascimento"
-        app:layout_constraintTop_toBottomOf="@+id/rgSexo"/>
-
-    <Spinner
-        android:id="@+id/spEs"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginHorizontal="10dp"
-        android:entries="@array/escolaridade"
-        app:layout_constraintTop_toBottomOf="@+id/etDataNasc"
-        />
-
-    <EditText
-        android:id="@+id/etVagaInteresse"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:inputType="text"
-        android:layout_marginHorizontal="10dp"
-        android:padding="10dp"
-        android:hint="Vagas de interesse"
-        app:layout_constraintTop_toBottomOf="@+id/spEs" />
-
-    <Button
-        android:id="@+id/btLimpar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/limpar"
-        android:padding="5dp"
-        android:layout_margin="5dp"
-        android:minHeight="48dp"
-        app:layout_constraintTop_toBottomOf="@+id/etVagaInteresse"
-        />
-
-    <Button
-        android:id="@+id/btSalvar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/salvar"
-        android:padding="5dp"
-        android:layout_margin="5dp"
-        android:minHeight="48dp"
-        app:layout_constraintTop_toBottomOf="@+id/btLimpar"
-        />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>
