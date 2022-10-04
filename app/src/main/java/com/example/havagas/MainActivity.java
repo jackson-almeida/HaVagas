@@ -1,5 +1,6 @@
 package com.example.havagas;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -34,9 +35,40 @@ public class MainActivity extends AppCompatActivity {
     private EditText etIntVagas;
 
     @Override
+    protected void onSaveInstanceState(@Nullable Bundle savedInstanceState) {
+        savedInstanceState.putString("ET_NAME", etName.toString());
+        savedInstanceState.putString("ET_PHONE", etName.toString());
+        savedInstanceState.putString("RB_RESID", etName.toString());
+        savedInstanceState.putString("RB_COM", etName.toString());
+        savedInstanceState.putString("ET_CELLPHONE", etName.toString());
+        savedInstanceState.putString("RB_MASC", etName.toString());
+        savedInstanceState.putString("RB_FEM", etName.toString());
+        savedInstanceState.putString("ET_DATANASC", etName.toString());
+        savedInstanceState.putString("SP_ESC", etName.toString());
+        savedInstanceState.putString("ET_VAGA_INT", etName.toString());
+
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        ActivityMainBinding amb = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(amb.getRoot());
+
+
+
+//        amb.etName.setText(savedInstanceState.getString("ET_NAME"));
+//        amb.etEmail.setText(savedInstanceState.getString(""));
+//        amb.etPhone.setText(savedInstanceState.getString(""));
+//        amb.rbResid.setText(savedInstanceState.getString(""));
+//        amb.rbCom.setText(savedInstanceState.getString(""));
+//        amb.etCellPhone.setText(savedInstanceState.getString(""));
+//        amb.rbMasc.setText(savedInstanceState.getString(""));
+//        amb.rbFem.setText(savedInstanceState.getString(""));
+//        amb.etDataNasc.setText(savedInstanceState.getString(""));
+//        amb.spEs.setEnabled(false);
+//        amb.etVagaInteresse.setText(savedInstanceState.getString(""));
 
         buttonClear = findViewById(R.id.btLimpar);
         buttonSave = findViewById(R.id.btSalvar);
